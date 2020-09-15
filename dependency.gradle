@@ -1,0 +1,196 @@
+ext.dependency = [
+    onefootball         : [
+        resources: "com.onefootball:resources:${versions.onefootball.resources}",
+        xpa      : "com.onefootball:experience:${versions.onefootball.xpa}",
+    ],
+    firebase            : [
+        config     : "com.google.firebase:firebase-config-ktx:${versions.firebase.config}",
+        analytics  : "com.google.firebase:firebase-analytics:${versions.firebase.analytics}",
+        performance: "com.google.firebase:firebase-perf:${versions.firebase.performance}",
+        messaging  : "com.google.firebase:firebase-messaging:${versions.firebase.messaging}",
+    ],
+    playServices        : [
+        base       : "com.google.android.gms:play-services-base:${versions.playServices.base}",
+        location   : "com.google.android.gms:play-services-location:${versions.playServices.location}",
+        iid        : "com.google.android.gms:play-services-iid:${versions.playServices.iid}",
+        auth       : "com.google.android.gms:play-services-auth:${versions.playServices.auth}",
+        advertising: dependencies.create("com.google.android.gms:play-services-ads:${versions.playServices.advertising}") {
+            transitive = true
+        },
+    ],
+    retrofit            : [
+        v2: [
+            core     : "com.squareup.retrofit2:retrofit:${versions.retrofit.v2}",
+            adapter  : [
+                rx: "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit.v2}",
+            ],
+            converter: [
+                gson : "com.squareup.retrofit2:converter-gson:${versions.retrofit.v2}",
+                moshi: "com.squareup.retrofit2:converter-moshi:${versions.retrofit.v2}",
+                scalars: "com.squareup.retrofit2:converter-scalars:${versions.retrofit.v2}"
+            ],
+        ],
+    ],
+    dagger              : [
+        v2: [
+            core    : "com.google.dagger:dagger:${versions.dagger2}",
+            compiler: "com.google.dagger:dagger-compiler:${versions.dagger2}",
+        ]
+    ],
+    evernoteState       : [
+        core    : "com.evernote:android-state:${versions.evernoteState}",
+        compiler: "com.evernote:android-state-processor:${versions.evernoteState}",
+    ],
+    autoValue           : [
+        core      : "com.google.auto.value:auto-value-annotations:${versions.autoValue.core}",
+        compiler  : "com.google.auto.value:auto-value:${versions.autoValue.core}",
+        ignoreHash: "com.github.reggar:auto-value-ignore-hash-equals:${versions.autoValue.ignoreHash}",
+    ],
+    leakCanary          : [
+        core                : "com.squareup.leakcanary:leakcanary-android:${versions.leakCanary}",
+        objectWatcherAndroid: "com.squareup.leakcanary:leakcanary-object-watcher-android:${versions.leakCanary}",
+    ],
+    androidX            : [
+        ktx             : [
+            core: "androidx.core:core-ktx:${versions.androidX.ktx}",
+        ],
+        lifecycle       : [
+            java8       : "androidx.lifecycle:lifecycle-common-java8:${versions.androidX.lifecycle}",
+            extensions  : "androidx.lifecycle:lifecycle-extensions:${versions.androidX.lifecycle}",
+            runtime     : "androidx.lifecycle:lifecycle-runtime-ktx:${versions.androidX.runtime}",
+            viewModel   : "androidx.lifecycle:lifecycle-viewmodel:${versions.androidX.lifecycle}",
+            viewModelktx: "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.androidX.lifecycle}",
+            liveDataKtx : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.androidX.lifecycle}",
+        ],
+        recyclerView    : "androidx.recyclerview:recyclerview:${versions.androidX.recyclerView}",
+        constraintLayout: "androidx.constraintlayout:constraintlayout:${versions.androidX.constraintLayout}",
+        appCompat       : "androidx.appcompat:appcompat:${versions.androidX.appCompat}",
+        annotations     : "androidx.annotation:annotation:${versions.androidX.annotations}",
+        cardView        : "androidx.cardview:cardview:${versions.androidX.cardView}",
+        gridLayout      : "androidx.gridlayout:gridlayout:${versions.androidX.gridLayout}",
+        preferences     : "androidx.preference:preference:${versions.androidX.preferences}",
+        browser         : "androidx.browser:browser:${versions.androidX.browser}",
+        exifInterface   : "androidx.exifinterface:exifinterface:${versions.androidX.exifInterface}",
+        legacySupportV4 : "androidx.legacy:legacy-support-v4:${versions.androidX.legacySupportV4}",
+        media           : "androidx.media:media:${versions.androidX.media}",
+        mediaRouter     : "androidx.mediarouter:mediarouter:${versions.androidX.mediaRouter}",
+    ],
+    google              : [
+        materialDesign: "com.google.android.material:material:${versions.google.materialDesign}",
+    ],
+    social              : [
+        facebook: [
+            sdk   : dependencies.create("com.facebook.android:facebook-core:${versions.social.facebook.sdk}") {
+                exclude group: 'com.android.support'
+            },
+            login : "com.facebook.android:facebook-login:${versions.social.facebook.sdk}",
+            common: "com.facebook.android:facebook-common:${versions.social.facebook.sdk}",
+        ],
+        twitter : [
+            text: "com.twitter.twittertext:twitter-text:${versions.social.twitter.text}"
+        ],
+    ],
+    ads                 : [
+        facebook: [
+            audienceSdk: dependencies.create("com.facebook.android:audience-network-sdk:${versions.ads.facebook.audienceSdk}") {
+                exclude group: 'com.android.support'
+            },
+        ],
+        mopub   : [
+            banner                 : dependencies.create("com.mopub:mopub-sdk-banner:${versions.ads.mopub.banner}@aar") {
+                transitive = true
+            },
+            video                  : dependencies.create("com.mopub:mopub-sdk-native-video:${versions.ads.mopub.nativeVideo}@aar") {
+                transitive = true
+            },
+            admobMediation         : "com.mopub.mediation:admob:${versions.ads.mopub.admobMediation}",
+            facebookAudienceNetwork: "com.mopub.mediation:facebookaudiencenetwork:${versions.ads.mopub.facebookAudienceNetwork}",
+            smaato                 : "com.smaato.android.sdk:mopub-banner-adapter:${versions.ads.smaato}",
+            teadsAdapter           : "tv.teads.sdk.android:mopubadapter:${versions.ads.mopub.teadsAdapter}",
+        ],
+        taboola : "com.taboola:android-sdk:${versions.ads.taboola}@aar",
+        cmp     : [
+            didomi: "io.didomi.sdk:android:${versions.ads.didomi}",
+        ],
+        teads   : dependencies.create("tv.teads.sdk.android:sdk:${versions.ads.teads}@aar") {
+            transitive = true
+        },
+        tam     : "com.amazon.android:aps-sdk:${versions.ads.tam}@aar",
+    ],
+    exoPlayer           : [
+        core  : "com.google.android.exoplayer:exoplayer:${versions.exoPlayer}", // TODO: use actual core package
+        okHttp: "com.google.android.exoplayer:extension-okhttp:${versions.exoPlayer}",
+    ],
+    rx                  : [
+        java   : "io.reactivex.rxjava2:rxjava:${versions.rx.java}",
+        kotlin : "io.reactivex.rxjava2:rxkotlin:${versions.rx.kotlin}",
+        android: "io.reactivex.rxjava2:rxandroid:${versions.rx.android}",
+        relay  : "com.jakewharton.rxrelay2:rxrelay:${versions.rx.relay}",
+        lint   : "nl.littlerobots.rxlint:rxlint:${versions.rx.lint}",
+    ],
+    kotlin              : [
+        jdk       : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin.core}",
+        coroutines: [
+            core   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlin.coroutines}",
+            android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlin.coroutines}",
+            rx2    : "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:${versions.kotlin.coroutines}",
+        ]
+    ],
+    android             : [
+        androidJobQueue   : dependencies.create("com.path:android-priority-jobqueue:${versions.android.androidJobQueue}") {
+            exclude group: 'com.google.android', module: 'android'
+        },
+        androidGifDrawable: "pl.droidsonroids.gif:android-gif-drawable:${versions.android.androidGifDrawable}",
+        photoView         : "com.github.chrisbanes:PhotoView:${versions.android.photoView}",
+        billingKtx        : "com.android.billingclient:billing-ktx:${versions.android.billing}",
+    ],
+    jwPlayer            : [
+        core  : "com.longtailvideo.jwplayer:jwplayer-core:${versions.jwPlayer}",
+        common: "com.longtailvideo.jwplayer:jwplayer-common:${versions.jwPlayer}",
+        ima   : "com.longtailvideo.jwplayer:jwplayer-ima:${versions.jwPlayer}",
+        cast  : "com.longtailvideo.jwplayer:jwplayer-chromecast:${versions.jwPlayer}",
+    ],
+    okHttp              : [
+        v2: "com.squareup.okhttp:okhttp:${versions.okHttp.v2}",
+        v4: [
+            core   : "com.squareup.okhttp3:okhttp:${versions.okHttp.v4}",
+            logging: "com.squareup.okhttp3:logging-interceptor:${versions.okHttp.v4}",
+        ],
+    ],
+    greenDao            : [
+        core     : "de.greenrobot:greendao:${versions.greenDao}",
+        generator: "de.greenrobot:greendao-generator:${versions.greenDao}",
+    ],
+    branchIo            : "io.branch.sdk.android:library:${versions.branchIo}",
+    gson                : "com.google.code.gson:gson:${versions.gson}",
+    timber              : "com.jakewharton.timber:timber:${versions.timber}",
+    eventBus            : "de.greenrobot:eventbus:${versions.eventBus}",
+    urbanAirShip        : "com.urbanairship.android:urbanairship-fcm:${versions.urbanAirShip}",
+    crashlytics         : "com.crashlytics.sdk.android:crashlytics:${versions.crashlytics}",
+    picasso             : "com.squareup.picasso:picasso:${versions.picasso}",
+    localytics          : "com.localytics.android:library:${versions.localytics}",
+    installreferrer     : "com.android.installreferrer:installreferrer:${versions.installreferrer}",
+    adjust              : "com.adjust.sdk:adjust-android:${versions.adjust}",
+    jetbrainsAnnotations: "org.jetbrains:annotations:${versions.jetbrainsAnnotations}",
+    jodaTime            : "net.danlew:android.joda:${versions.jodaTime}",
+    hyperion            : [
+        core             : "com.willowtreeapps.hyperion:hyperion-core:${versions.hyperion.core}",
+        attr             : "com.willowtreeapps.hyperion:hyperion-attr:${versions.hyperion.core}",
+        buildConfig      : "com.willowtreeapps.hyperion:hyperion-build-config:${versions.hyperion.core}",
+        disk             : "com.willowtreeapps.hyperion:hyperion-disk:${versions.hyperion.core}",
+        geigerCounter    : "com.willowtreeapps.hyperion:hyperion-geiger-counter:${versions.hyperion.core}",
+        measurement      : "com.willowtreeapps.hyperion:hyperion-measurement:${versions.hyperion.core}",
+        phoenix          : "com.willowtreeapps.hyperion:hyperion-phoenix:${versions.hyperion.core}",
+        recorder         : "com.willowtreeapps.hyperion:hyperion-recorder:${versions.hyperion.core}",
+        sharedPreferences: "com.willowtreeapps.hyperion:hyperion-shared-preferences:${versions.hyperion.core}",
+        timber           : "com.willowtreeapps.hyperion:hyperion-timber:${versions.hyperion.core}",
+        deviceInfo       : "pl.droidsonroids.foqa:deviceinfo:${versions.hyperion.droidsOnRoids}",
+        fontScale        : "pl.droidsonroids.foqa:fontscale:${versions.hyperion.droidsOnRoids}",
+    ],
+    autoservice         : "com.google.auto.service:auto-service:${versions.autoservice}",
+    lint                : [
+        api   : "com.android.tools.lint:lint-api:${versions.lint}",
+        checks: "com.android.tools.lint:lint-checks:${versions.lint}",
+    ],
+    zendesk             : "com.zendesk:support:${versions.zendesk}",
+]
