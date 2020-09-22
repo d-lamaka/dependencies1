@@ -145,7 +145,7 @@ ext.versions = [
     jetbrainsAnnotations: "20.1.0",
     leakCanary          : "2.4",
     jodaTime            : "2.10.6.1",
-    jwPlayer            : "3.15.1",
+    jwPlayer            : "3.15.0",
     hyperion            : [
         core         : "0.9.29",
         droidsOnRoids: "0.1.21",
