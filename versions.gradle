@@ -152,6 +152,5 @@ ext.versions = [
     ],
     autoservice         : "1.0-rc7",
     lint                : "27.0.1",
-    zendesk             : "5.0.1",
-    test                : "1.0.0"
+    zendesk             : "5.0.1"
 ]
