@@ -8,6 +8,7 @@ ext.dependency = [
         analytics  : "com.google.firebase:firebase-analytics:${versions.firebase.analytics}",
         performance: "com.google.firebase:firebase-perf:${versions.firebase.performance}",
         messaging  : "com.google.firebase:firebase-messaging:${versions.firebase.messaging}",
+        crashlytics: "com.google.firebase:firebase-crashlytics:${versions.firebase.crashlytics}"
     ],
     playServices        : [
         base       : "com.google.android.gms:play-services-base:${versions.playServices.base}",
@@ -151,7 +152,6 @@ ext.dependency = [
         cast  : "com.longtailvideo.jwplayer:jwplayer-chromecast:${versions.jwPlayer}",
     ],
     okHttp              : [
-        v2: "com.squareup.okhttp:okhttp:${versions.okHttp.v2}",
         v4: [
             core   : "com.squareup.okhttp3:okhttp:${versions.okHttp.v4}",
             logging: "com.squareup.okhttp3:logging-interceptor:${versions.okHttp.v4}",
@@ -166,7 +166,6 @@ ext.dependency = [
     timber              : "com.jakewharton.timber:timber:${versions.timber}",
     eventBus            : "de.greenrobot:eventbus:${versions.eventBus}",
     urbanAirShip        : "com.urbanairship.android:urbanairship-fcm:${versions.urbanAirShip}",
-    crashlytics         : "com.crashlytics.sdk.android:crashlytics:${versions.crashlytics}",
     picasso             : "com.squareup.picasso:picasso:${versions.picasso}",
     localytics          : "com.localytics.android:library:${versions.localytics}",
     installreferrer     : "com.android.installreferrer:installreferrer:${versions.installreferrer}",
