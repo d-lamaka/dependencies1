@@ -1,4 +1,11 @@
 ext.dependency = [
+    kotlin        : [
+        stdlib    : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin.stdlib}",
+        coroutines: [
+            core   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlin.coroutines.core}",
+            android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlin.coroutines.android}",
+        ],
+    ],
     onefootball         : [
         resources: "com.onefootball:resources:${versions.onefootball.resources}",
         xpa      : "com.onefootball:experience:${versions.onefootball.xpa}",
