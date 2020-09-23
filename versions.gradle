@@ -1,4 +1,11 @@
 ext.versions = [
+    kotlin         : [
+        stdlib       : "1.4.0",
+        coroutines   : [
+            core   : "1.3.9",
+            android: "1.3.9",
+        ],
+    ],
     build               : [
         androidGradle       : "4.0.1",
         gradleVersions      : "0.33.0",
